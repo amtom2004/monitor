@@ -4,7 +4,7 @@ import socket
 
 app = Flask(__name__)
 
-VERSION = os.getenv('APP_VERSION', '2.0')
+VERSION = os.getenv('APP_VERSION', '3.0')
 HOSTNAME = socket.gethostname()
 
 @app.route('/')
