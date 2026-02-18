@@ -1,10 +1,10 @@
-import flask from Flask, jsonify
+from flask import Flask, jsonify
 import os
 import socket
 
 app = Flask(__name__)
 
-VERSION = os.getenv('APP_VERSION', '1.0')
+VERSION = os.getenv('APP_VERSION', '2.0')
 HOSTNAME = socket.gethostname()
 
 @app.route('/')
@@ -36,3 +36,6 @@ def version():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
+
+
+# argocd login localhost:8080 --insecure --username admin --password $(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d)
