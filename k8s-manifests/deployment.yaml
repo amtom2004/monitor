@@ -16,7 +16,7 @@ spec:
   spec:
    containers:
    - name: monitor
-     image: aron4226/monitor:2.0
+     image: aron4226/monitor:latest
      imagePullPolicy: Always
      ports:
      - containerPort: 8080
